@@ -15,7 +15,7 @@ Takes an amount in USD, and allows user to convert it to 5+ different currencies
 3. Load api key into environmental variables using name API_Key.
 4. Install necessary node modules in package.json
 
-5. npm start to launch a live development server.
+5. run npm start to launch a live development server.
 
 ## Known Bugs
 
