@@ -25,8 +25,9 @@ export default class currencyConvert {
     }
   }
   static asyncgetConversionObject() {
-    currencyConvert.conversionRate().then((response) => {
-      JSON.stringify(response.conversion_rates);
+    currencyConvert.conversionRate()
+    .then(response) => {
+      return response.conversion_rates;
     });
   }
 }
