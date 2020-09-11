@@ -1,23 +1,32 @@
+import $ from "jquery";
 export default class currencyConvert {
-  static conversionRate() {
-    return fetch(
-      `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`
-    )
-      .then(function (response) {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
-        return response.json();
-      })
-      .catch(function (error) {
-        return error;
-      });
-  }
-  static getCurrencyInfo(response) {
-    if (response) {
-      return response.conversion_rates;
-    } else {
-      return "There was an error fetching the information";
+  static async conversionRate() {
+    try {
+      const response = await fetch(
+        `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`
+      );
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response.json();
+    } catch (error) {
+      return error.message;
     }
+  }
+  static async getCurrencyValues(response) {
+    if (response.ok) {
+      $("#amountafterconversion").text(
+        `The current rates are as follows ${response.conversion_rates}`
+      );
+    } else {
+      $("#amountafterconversion").text(
+        `An error occured - ${response.message}`
+      );
+    }
+  }
+  static asyncgetConversionObject() {
+    currencyConvert.conversionRate().then((response) => {
+      JSON.stringify(response.conversion_rates);
+    });
   }
 }
