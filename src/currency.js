@@ -24,10 +24,9 @@ export default class currencyConvert {
       );
     }
   }
-  static asyncgetConversionObject() {
-    currencyConvert.conversionRate()
-    .then(response) => {
-      return response.conversion_rates;
+  static async getConversionObject() {
+    currencyConvert.conversionRate().then((response) => {
+      return response;
     });
   }
 }
