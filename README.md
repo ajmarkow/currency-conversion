@@ -31,7 +31,7 @@ _Bootstrap, CSS, Git, HTML, JavaScript, Node.js_
 
 ### License
 
-\_MIT License
+MIT License
 
 Copyright (c) 2020 Alexander James Markow
 
