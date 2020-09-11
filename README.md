@@ -1,6 +1,6 @@
 # _Currency Conversion Made Easy_
 
-_Converts USD to other currencies., September 11, 2020_
+Converts USD to other currencies., September 11, 2020
 
 By **_AJ Markow_**
 
@@ -11,7 +11,7 @@ Takes an amount in USD, and allows user to convert it to 5+ different currencies
 ## Setup/Installation Requirements
 
 1. Clone root directory into testing environment.
-2. Obtain API Key from https://www.exchangerate-api.com/
+2. Obtain API Key from <https://www.exchangerate-api.com/>
 3. Load api key into environmental variables using name API_Key.
 4. Install necessary node modules in package.json
 
@@ -23,11 +23,11 @@ Debugging ongoing as of most recent commit on 9/11/2020.
 
 ## Support and contact details
 
-alexanderjmarkow@gmail.com or contact me at https://ajm.codes
+alexanderjmarkow@gmail.com or contact me at <https://ajm.codes>
 
 ## Technologies Used
 
-_Bootstrap, CSS, Git, HTML, JavaScript, Node.js_
+Bootstrap, CSS, Git, HTML, JavaScript, Node.js
 
 ### License
 
