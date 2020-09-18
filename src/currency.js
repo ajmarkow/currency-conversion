@@ -1,12 +1,16 @@
 import $ from "jquery";
 export default class currencyConvert {
-  static async conversionRate() {
+  constructor() {
+    this.amount = 0;
+    this.rates = {};
+  }
+  async conversionRate() {
     return new Promise(function (resolve, reject) {
       let apicall = new XMLHttpRequest();
       const apiurl = `https://v6.exchangerate-api.com/v6/${process.env.APIKEY}/latest/USD`;
       apicall.onload = function () {
         if (this.status === 200) {
-          resolve(apicall.response);
+          return resolve(JSON.parse(apicall.response));
         } else {
           reject(apicall.response);
         }
@@ -15,8 +19,8 @@ export default class currencyConvert {
       apicall.send();
     });
   }
-  static async getCurrencyValues(response) {
-    if (response.ok) {
+  static getCurrencyValues(response) {
+    if (response) {
       $("#amountafterconversion").text(
         `The current rates are as follows ${response.conversion_rates}`
       );
