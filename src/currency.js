@@ -41,4 +41,10 @@ export default class currencyConvert {
       return selectedcurrency;
     }
   }
+  calculateAndPrintFinal(currencyvalueparsed) {
+    let amount = $("#conversionamount").val();
+    let conversionrate = currencyvalueparsed;
+    let convertedamount = conversionrate * amount;
+    return `The initial amount was ${amount}.  The conversion rate is ${conversionrate}. The amount after conversion is ${convertedamount}`;
+  }
 }

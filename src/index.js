@@ -11,7 +11,9 @@ $(document).ready(function () {
     event.preventDefault();
     let currentrate = await conversion.conversionRate();
     conversion.rates = currentrate;
-    console.log(currentrate);
-    console.log(conversion.getCurrencyValues());
+    let rateselected = conversion.getCurrencyValues();
+    $("#amountafterconversion").text(
+      conversion.calculateAndPrintFinal(rateselected)
+    );
   });
 });
