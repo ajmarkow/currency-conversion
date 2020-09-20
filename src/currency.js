@@ -19,15 +19,26 @@ export default class currencyConvert {
       apicall.send();
     });
   }
-  static getCurrencyValues(response) {
-    if (response) {
-      $("#amountafterconversion").text(
-        `The current rates are as follows ${response.conversion_rates}`
-      );
-    } else {
-      $("#amountafterconversion").text(
-        `An error occured - ${response.message}`
-      );
+  getCurrencyValues() {
+    console.log($("#newcurrency").val());
+    if ($("#newcurrency").val() === "AUD") {
+      let selectedcurrency = this.rates.conversion_rates.AUD;
+      return selectedcurrency;
+    } else if ($("#newcurrency").val() === "EUR") {
+      let selectedcurrency = this.rates.conversion_rates.EUR;
+      return selectedcurrency;
+    } else if ($("#newcurrency").val() === "GBP") {
+      let selectedcurrency = this.rates.conversion_rates.GBP;
+      return selectedcurrency;
+    } else if ($("#newcurrency").val() === "CAD") {
+      let selectedcurrency = this.rates.conversion_rates.CAD;
+      return selectedcurrency;
+    } else if ($("#newcurrency").val() === "PKR") {
+      let selectedcurrency = this.rates.conversion_rates.PKR;
+      return selectedcurrency;
+    } else if ($("#newcurrency").val() === "PKR") {
+      let selectedcurrency = this.rates.conversion_rates.PKR;
+      return selectedcurrency;
     }
   }
 }

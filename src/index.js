@@ -10,7 +10,8 @@ $(document).ready(function () {
     conversion.amount = $("#conversionamount").val();
     event.preventDefault();
     let currentrate = await conversion.conversionRate();
-    console.log(currentrate.conversion_rates);
-    $("#amountafterconversion").text(conversion.rates);
+    conversion.rates = currentrate;
+    console.log(currentrate);
+    console.log(conversion.getCurrencyValues());
   });
 });
