@@ -4,7 +4,7 @@ export default class currencyConvert {
     this.amount = 0;
     this.rates = {};
   }
-  async conversionRate() {
+  static async conversionRate() {
     return new Promise(function (resolve, reject) {
       let apicall = new XMLHttpRequest();
       const apiurl = `https://v6.exchangerate-api.com/v6/${process.env.APIKEY}/latest/USD`;
@@ -20,7 +20,6 @@ export default class currencyConvert {
     });
   }
   getCurrencyValues() {
-    console.log($("#newcurrency").val());
     if ($("#newcurrency").val() === "AUD") {
       let selectedcurrency = this.rates.conversion_rates.AUD;
       return selectedcurrency;
@@ -41,7 +40,7 @@ export default class currencyConvert {
       return selectedcurrency;
     }
   }
-  calculateAndPrintFinal(currencyvalueparsed) {
+  static calculateAndPrintFinal(currencyvalueparsed) {
     let amount = $("#conversionamount").val();
     let conversionrate = currencyvalueparsed;
     let convertedamount = conversionrate * amount;
