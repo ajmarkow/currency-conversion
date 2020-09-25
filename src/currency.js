@@ -4,10 +4,10 @@ export default class currencyConvert {
     this.amount = 0;
     this.rates = {};
   }
-  static async conversionRate() {
+  async conversionRate() {
     return new Promise(function (resolve, reject) {
       let apicall = new XMLHttpRequest();
-      const apiurl = `https://v6.exchangerate-api.com/v6/${process.env.APIKEY}/latest/USD`;
+      const apiurl = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
       apicall.onload = function () {
         if (this.status === 200) {
           return resolve(JSON.parse(apicall.response));

@@ -13,7 +13,7 @@ $(document).ready(function () {
     conversion.rates = currentrate;
     let rateselected = conversion.getCurrencyValues();
     $("#amountafterconversion").text(
-      conversion.calculateAndPrintFinal(rateselected)
+      currencyConvert.calculateAndPrintFinal(rateselected)
     );
   });
 });
